@@ -1,0 +1,262 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    position: relative; /* Added for positioning */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+#backgroundVideo {
+    position: absolute; /* Positioning the video */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire background */
+    z-index: -1; /* Send video to the back */
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start; /* Align containers to the top */
+    height: 100vh;
+    padding: 20px;
+}
+
+.glass-container {
+    background: rgba(255, 255, 255, 0.8); /* Increased opacity */
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+    transition: transform 0.3s ease; /* Animation for scaling */
+}
+
+.glass-container:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+.transparent-container {
+    display: none;
+    background: rgba(255, 255, 255, 0.9); /* Increased opacity */
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 10px;
+    animation: fadeIn 0.5s; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes slideOut {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+
+.show {
+    display: block;
+    animation: slideIn 0.5s; /* Slide-in animation */
+}
+
+.hide {
+    animation: slideOut 0.5s; /* Slide-out animation */
+    animation-fill-mode: forwards; /* Ensure the animation completes */
+}
+
+input {
+    margin: 5px;
+    padding: 10px;
+    width: 80%;
+}
+
+button {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3e8e41;
+}
+
+/* Electric animations */
+.glass-container button {
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-container button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #4CAF50;
+    transform: scaleX(0);
+}
+
+/* Adjust alignment for the third law calculator */
+#thirdLaw {
+    text-align: left;
+}
+
+#thirdLaw input {
+    width: 40%;
+    margin: 5px 10px;
+}
+
+#thirdLaw button {
+    width: 40%;
+    margin: 5px 10px;
+}
+
+/* Adjust alignment for the work calculator */
+#workContainer {
+    text-align: left;
+}
+
+#workContainer input {
+    width: 40%;
+    margin: 5px 10px;
+}
+
+#workContainer button {
+    width: 40%;
+    margin: 5px 10px;
+}
+
+.transparent-container {
+    display: none; /* Initially hide the container */
+    background-color: rgba(255, 255, 255, 0.9); /* Increased opacity */
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.transparent-container.hide {
+    display: none; /* Hide the container when the 'hide' class is added */
+}
+
+.transparent-container.show {
+    display: block; /* Show the container when it has the class 'show' */
+}
+
+h2, h3 {
+    color: #333;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+.glass-container {
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0; /* Spacing between containers */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+h3 {
+    color: #555;
+}
+
+input[type="number"] {
+    width: calc(100% - 20px); /* Full width with padding */
+    padding: 10px;
+    margin: 10px 0; /* Spacing between inputs */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* Full width button */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+p {
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    overflow-y: auto; /* Allow vertical scrolling for the body */
+}
+
+.glass-container {
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0; /* Spacing between containers */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+h3 {
+    color: #555;
+}
+
+input[type="number"] {
+    width: calc(100% - 20px); /* Full width with padding */
+    padding: 10px;
+    margin: 10px 0; /* Spacing between inputs */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* Full width button */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+p {
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+}

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Concepts</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Video Background -->
+    <video autoplay muted loop id="backgroundVideo">
+        <source src="scene1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="container">
+        <div class="glass-container" id="newtons-law">
+            <h2>Newton's Law of Motion</h2>
+            <button onclick="toggleLaw('firstLaw')">1st Law</button>
+            <button onclick="toggleLaw('secondLaw')">2nd Law</button>
+            <button onclick="toggleLaw('thirdLaw')">3rd Law</button>
+
+            <div class="transparent-container" id="firstLaw">
+                <p>An object at rest stays at rest...</p>
+                <h3>Weight Calculator</h3>
+                <input type="number" id="mass" placeholder="Mass (kg)" />
+                <input type="number" id="gravity" placeholder="Gravity (m/s²)" value="9.81" />
+                <input type="number" id="weight" placeholder="Weight (N)" />
+                <button onclick="calculateWeight()">Calculate Weight</button>
+                <button onclick="calculateMass()">Calculate Mass</button>
+                <button onclick="calculateGravity()">Calculate Gravity</button>
+                <p id="result"></p>
+            </div>
+
+            <div class="transparent-container" id="secondLaw">
+                <h3>Newton's Second Law Calculator</h3>
+                <input type="number" id="force" placeholder="Force (N)" />
+                <input type="number" id="mass2" placeholder="Mass (kg)" />
+                <input type="number" id="acceleration" placeholder="Acceleration (m/s²)" />
+                <button onclick="calculateForce()">Calculate Force</button>
+                <button onclick="calculateMassFromForce()">Calculate Mass</button>
+                <button onclick="calculateAcceleration()">Calculate Acceleration</button>
+                <p id="result2"></p>
+            </div>
+
+            <div class="transparent-container" id="thirdLaw">
+                <h3>Newton's Third Law Calculator</h3>
+                <input type="number" id="mass1" placeholder="Mass m1 (kg)" />
+                <input type="number" id="acceleration1" placeholder="Acceleration a1 (m/s²)" />
+                <input type="number" id="mass2" placeholder="Mass m2 (kg)" />
+                <input type="number" id="acceleration2" placeholder="Acceleration a2 (m/s²)" />
+                <button onclick="calculateThirdLaw()">Calculate</button>
+                <p id="result3"></p>
+            </div>
+        </div>
+
+        <div class="glass-container" id="work-energy">
+            <h2>Work, Energy, and Power</h2>
+            <button onclick="toggleWork()">Work</button>
+            <button onclick="toggleEnergy()">Energy</button>
+            <button onclick="togglePower()">Power</button>
+
+            <div class="transparent-container" id="workContainer">
+                <h3>Work Calculator</h3>
+                <input type="number" id="forceWork" placeholder="Force (N)" />
+                <input type="number" id="distance" placeholder="Distance (m)" />
+                <input type="number" id="angle" placeholder="Angle (θ, degrees)" />        
+                <input type="number" id="work" placeholder="Work (J)" />
+                <button onclick="calculateWork()">Calculate Work</button>
+                <button onclick="calculateForceWork()">Calculate Force</button>
+                <button onclick="calculateDistance()">Calculate Distance</button>
+                <p id="workResult"></p>
+            </div>
+
+            <div class="transparent-container" id="energyContainer">
+                <h3>Energy Calculator</h3>
+                <input type="number" id="massEnergy" placeholder="Mass (kg)" />
+                <input type="number" id="velocityEnergy" placeholder="Velocity (m/s)" />
+                <input type="number" id="heightEnergy" placeholder="Height (m)" />
+                <input type="number" id="gravityEnergy" placeholder="Gravity (m/s²)" value="9.81" />
+                <input type="number" id="kineticEnergy" placeholder="Kinetic Energy (J)" />
+                <input type="number" id="potentialEnergy" placeholder="Potential Energy (J)" />
+                <button onclick="calculateKineticEnergy()">Calculate Kinetic Energy</button>
+                <button onclick="calculatePotentialEnergy()">Calculate Potential Energy</button>
+                <button onclick="calculateMassFromEnergy()">Calculate Mass</button>
+                <button onclick="calculateVelocityFromEnergy()">Calculate Velocity</button>
+                <button onclick="calculateHeightFromEnergy()">Calculate Height</button>
+                <p id="energyResult"></p>
+            </div>
+
+            <div class="transparent-container" id="energyContainer">
+                <h3>Energy Calculator</h3>
+                <p>Content for Energy calculations will go here.</p>
+            </div>
+
+            <div class="transparent-container" id="powerContainer">
+                <h3>Power Calculator</h3>
+                <input type="number" id="power" placeholder="Power (W)" />
+                <input type="number" id="weightPower" placeholder="Weight (N)" />
+                <input type="number" id="timePower" placeholder="Time (s)" />
+                <input type="number" id="forcePower" placeholder="Force (N)" />
+                <input type="number" id="velocityPower" placeholder="Velocity (m/s)" />
+                <button onclick="calculatePower()">Calculate Power</button>
+                <button onclick="calculateWeightPower()">Calculate Weight</button>
+                <button onclick="calculateTimePower()">Calculate Time</button>
+                <button onclick="calculateForcePower()">Calculate Force</button>
+                <button onclick="calculateVelocityPower()">Calculate Velocity</button>
+                <p id="powerResult"></p>
+
+                <h4>Power Conversion</h4>
+                <select id="powerUnit">
+                    <option value="W">Watts (W)</option>
+                    <option value="kW">Kilowatts (kW)</option>
+                    <option value="hp">Horsepower (hp)</option>
+                    <option value="MW">Megawatts (MW)</option>
+                </select>
+                <input type="number" id="powerValue" placeholder="Power value" />
+                <button onclick="convertPower()">Convert</button>
+                <p id="powerConversionResult"></p>
+            </div>
+        </div>
+
+        <div class="glass-container" id="impulse-momentum">
+            <h2>Impulse and Momentum</h2>
+            <button onclick="toggleImpulse()">Impulse</button>
+            <button onclick="toggleMomentum()">Momentum</button>    
+        
+            <div class="transparent-container" id="impulseContainer">
+                <h3>Impulse Calculator</h3>
+                <input type="number" id="forceImpulse" placeholder="Force (N)" />
+                <input type="number" id="timeImpulse" placeholder="Time (s)" />
+                <input type="number" id="impulse" placeholder="Impulse (Ns)" />
+                <button onclick="calculateImpulse()">Calculate Impulse</button>
+                <button onclick="calculateForceImpulse()">Calculate Force</button>
+                <button onclick="calculateTimeImpulse()">Calculate Time</button>
+                <p id="impulseResult"></p>
+            </div>
+        
+            <div class="transparent-container" id="momentumContainer">
+                <h3>Momentum Calculator</h3>
+                <input type="number" id="massMomentum" placeholder="Mass (kg)" />
+                <input type="number" id="velocityMomentum" placeholder="Velocity (m/s)" />
+                <button onclick="calculateMomentum()">Calculate Momentum</button>
+                <p id="momentumResult"></p>
+            </div>
+        </div>
+        <div class="glass-container" id="kinematics">
+            <h2>Kinematics</h2>
+            <button onclick="toggleKinematics('firstKinematic')">1st Kinematic</button>
+            <button onclick="toggleKinematics('secondKinematic')">2nd Kinematic</button>
+            <button onclick="toggleKinematics('thirdKinematic')">3rd Kinematic</button>
+            <button onclick="toggleKinematics('fourthKinematic')">4th Kinematic</button>
+        
+            <div class="transparent-container hide" id="firstKinematic">
+                <h3>1st Kinematic Equation: v = u + at</h3>
+                <input type="number" id="u1" placeholder="Initial Velocity (u, m/s)" />
+                <input type="number" id="a1" placeholder="Acceleration (a, m/s²)" />
+                <input type="number" id="t1" placeholder="Time (t, s)" />
+                <input type="number" id="v1" placeholder="Final Velocity (v, m/s)" />
+                <button onclick="calculateFirstKinematic('v')">Calculate Final Velocity (v)</button>
+                <button onclick="calculateFirstKinematic('a')">Calculate Acceleration (a)</button>
+                <button onclick="calculateFirstKinematic('t')">Calculate Time (t)</button>
+                <p id="kinematicResult1"></p>
+            </div>
+        
+            <div class="transparent-container hide" id="secondKinematic">
+                <h3>2nd Kinematic Equation: s = ut + (1/2)at²</h3>
+                <input type="number" id="u2" placeholder="Initial Velocity (u, m/s)" />
+                <input type="number" id="t2" placeholder="Time (t, s)" />
+                <input type="number" id="a2" placeholder="Acceleration (a, m/s²)" />
+                <input type="number" id="s2" placeholder="Displacement (s, m)" />
+                <button onclick="calculateSecondKinematic('s')">Calculate Displacement (s)</button>
+                <button onclick="calculateSecondKinematic('a')">Calculate Acceleration (a)</button>
+                <button onclick="calculateSecondKinematic('t')">Calculate Time (t)</button>
+                <p id="kinematicResult2"></p>
+            </div>
+        
+            <div class="transparent-container hide" id="thirdKinematic">
+                <h3>3rd Kinematic Equation: v² = u² + 2as</h3>
+                <input type="number" id="u3" placeholder="Initial Velocity (u, m/s)" />
+                <input type="number" id="a3" placeholder="Acceleration (a, m/s²)" />
+                <input type="number" id="s3" placeholder="Displacement (s, m)" /> <!-- Added displacement input -->
+                <input type="number" id="v3" placeholder="Final Velocity (v, m/s)" />
+                <button onclick="calculateThirdKinematic('v')">Calculate Final Velocity (v)</button>
+                <button onclick="calculateThirdKinematic('a')">Calculate Acceleration (a)</button>
+                <p id="kinematicResult3"></p>
+            </div>
+        
+            <div class="transparent-container hide" id="fourthKinematic">
+                <h3>4th Kinematic Equation: s = vt - (1/2)at²</h3>
+                <input type="number" id="v4" placeholder="Final Velocity (v, m/s)" />
+                <input type="number" id="a4" placeholder="Acceleration (a, m/s²)" />
+                <input type="number" id="t4" placeholder="Time (t , s)" />
+                <input type="number" id="s4" placeholder="Displacement (s, m)" />
+                <button onclick="calculateFourthKinematic('s')">Calculate Displacement (s)</button>
+                <button onclick="calculateFourthKinematic('a')">Calculate Acceleration (a)</button>
+                <button onclick="calculateFourthKinematic('t')">Calculate Time (t)</button>
+                <p id="kinematicResult4"></p>
+            </div>
+        </div>
+        <div class="glass-container" id="tension-calculator">
+            <h2>Tension Calculator</h2>
+            <h3>Calculate Tension in a Rope</h3>
+            <input type="number" id="massTension" placeholder="Mass (kg)" />
+            <input type="number" id="gravityTension" placeholder="Gravity (m/s²)" value="9.81" />
+            <input type="number" id="additionalForce" placeholder="Additional Force (N)" />
+            <button onclick="calculateTension()">Calculate Tension</button>
+            <p id="tensionResult"></p>
+        </div>   
+
+    <script src="script.js"></script>
+</body>
+</html>
+
